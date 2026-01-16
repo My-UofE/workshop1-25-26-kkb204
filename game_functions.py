@@ -24,16 +24,9 @@ def process_guess(letter, board, word):
         print(f"Sorry, '{letter}' is not in the word")
         return False
     else:
-        word_list = []
-        index_list = []
-        for character in word:
-            word_list.append(character)
-        for item in word:
-            if letter in word:
-                letter_index = word_list.index(letter)
-                index_list.append(letter_index)
-        for index in index_list:
-            board[index] = letter
+        for i, character in enumerate(word):
+            if character == letter:
+                board[i] = letter
         print(f"Well done! '{letter}' is in the word")
         return True
 
